@@ -1,0 +1,9 @@
+## Interface: 30300
+## Title: |cff88ddffMcode_ZHLocale|r 中文本地化驱动
+## Notes: 在 enUS 客户端上启用插件自带的简体中文界面译文（AceLocale 系自动生效，缺译自动回落英文）。必须最先加载，请勿改名。
+## Author: Mcode
+## Version: 1.0
+## DefaultState: Enabled
+## X-Category: 界面
+
+!Mcode_ZHLocale.lua

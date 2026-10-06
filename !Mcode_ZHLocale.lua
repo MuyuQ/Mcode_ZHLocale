@@ -1,0 +1,12 @@
+-- Mcode_ZHLocale — 让 enUS 客户端显示插件自带的简体中文界面
+--
+-- 原理：AceLocale-3.0 在 NewLocale() 时读取全局 GAME_LOCALE（该库官方预留的
+-- 翻译测试口，见 AceLocale-3.0.lua 第 96 行 `GAME_LOCALE or gameLocale`）。
+-- 设为 "zhCN" 后，自带 zhCN 译文的插件会注册中文并覆盖英文；缺译的键自动
+-- 回落英文（默认语言写入时拒绝覆盖已有值，writedefaultproxy）；没有任何
+-- zhCN 译文的插件完全不受影响。个别插件的 zhCN 文件带 GetLocale() 守卫，
+-- 由 tools\fix_addon_locale.py 单独放开。
+--
+-- 必须在所有插件之前加载：目录名用 "!" 前缀保证加载顺序，请勿改名。
+-- 关闭方法：/ace 里禁用本插件并 /reload，一切恢复英文。
+GAME_LOCALE = "zhCN"
